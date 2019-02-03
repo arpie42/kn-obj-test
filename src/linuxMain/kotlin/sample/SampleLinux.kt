@@ -15,14 +15,13 @@ fun get_SDL_Error() = SDL_GetError()!!.toKString()
 object Graphics {
     private var win:CPointer<SDL_Window>? = null
     private var ren:CPointer<SDL_Renderer>? = null
-    private var bmp:CPointer<SDL_Surface>? = null
-    private var tex:CPointer<SDL_Texture>? = null
 
     fun init() {
         println("start init")
         if(SDL_Init(SDL_INIT_EVERYTHING) == -1) {
             println(" !! ERROR !! SDL_Init: ${ get_SDL_Error() }")
         }
+        println("SDL Initialised")
         win = SDL_CreateWindow("MyWindow", 0, 0, 640, 480, (SDL_WINDOW_SHOWN))
         if (win != null){
             println(" !! OK !! SDL_CreateWindow")
