@@ -29,8 +29,6 @@ kotlin {
         // in gradle.properties file and re-import your project in IDE.
         linuxMain {
         }
-        linuxTest {
-        }
     }
 }
 
